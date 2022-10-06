@@ -1,0 +1,32 @@
+server:
+  port: 9091
+  
+#DATABASE  
+spring:
+  profiles:
+    active: postgres
+    
+  application:
+    name: INBOX-SERVICE
+    
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inboxdb
+    username: postgres
+    password: postgress
+    driverClassName: org.postgresql.Driver
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServerDialect
+      ddl-auto: update
+#      
+##EUREKA
+eureka:
+   client:
+      registerWithEureka: false
+      fetchRegistry: false
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+   instance:
+    hostname: localhost 
